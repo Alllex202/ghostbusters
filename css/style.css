@@ -451,6 +451,10 @@ body {
     z-index: 10;
 }
 
+.button-next:focus {
+    outline:none;
+}
+
 @media (max-width: 1200px) {
     .container {
         max-width: 960px;
