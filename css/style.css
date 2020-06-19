@@ -160,6 +160,10 @@ body {
     transform: scale(2);
 }
 
+.m-menu-button:focus {
+    outline:none;
+}
+
 .menu-line {
     display: block;
     height: 2px;
