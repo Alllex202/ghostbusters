@@ -1,43 +1,41 @@
+:root {
+    --header-height: 105px;
+}
 * {
     box-sizing: border-box;
 }
-
 body {
     font-family: "Roboto", sans-serif;
     color: #363636;
 }
-
 .no-scroll {
     overflow: hidden;
 }
-
 .header {
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
-    /*position: fixed;*/
-    height: 105px;
+    width: 100%;
+    position: fixed;
+    height: var(--header-height);
     border-bottom: 1px solid #D4D4D4;
+    background-color: #FFFFFF;
+    z-index: 10;
 }
-
 .logo {
     margin-left: 34px;
     margin-right: 34px;
 }
-
 .line {
     height: 100%;
     width: 1px;
     background-color: #D4D4D4;
 }
-
 .m-menu {
     display: flex;
     height: 100%;
     align-items: center;
     flex-grow: 1;
 }
-
 .search-input {
     background-image: url(../img/search-icon.svg);
     background-repeat: no-repeat;
@@ -54,17 +52,14 @@ body {
     opacity: .6;
     transition: opacity 0.3s;
 }
-
 .search-input:focus, .search-input:hover {
     opacity: 1;
 }
-
 .navigation {
     margin-right: 44px;
     margin-left: auto;
     display: flex;
 }
-
 .navigation-link {
     position: relative;
     text-decoration: none;
@@ -75,7 +70,6 @@ body {
     outline: none;
     padding: 42px 0;
 }
-
 .navigation-link::after {
     content: "";
     height: 1px;
@@ -87,32 +81,27 @@ body {
     transform: scaleX(0);
     transition: transform 0.3s;
 }
-
 .navigation-link:hover::after,
 .navigation-link:focus::after {
     transform: scaleX(1);
 }
-
 .m-line {
     display: none;
     background-color: #FFFFFF;
     width: 120px;
     height: 1px;
 }
-
 .button {
     cursor: pointer;
     outline: none;
     filter: brightness(100%);
     transition: filter .2s;
 }
-
 .button-group {
     height: 100%;
     display: flex;
     border-left: 1px solid #D4D4D4;
 }
-
 .sign-up {
     color: #5671F6;
     font-size: 18px;
@@ -124,12 +113,10 @@ body {
     padding-right: 34px;
     position: relative;
 }
-
 .sign-up:hover,
 .sign-up:focus {
     filter: brightness(97%);
 }
-
 .sign-in {
     color: #fff;
     font-size: 18px;
@@ -141,17 +128,14 @@ body {
     padding-right: 50px;
     position: relative;
 }
-
 .sign-in:hover,
 .sign-in:focus {
     filter: brightness(111%);
 }
-
 .m-buttons {
     display: none;
     margin-right: 20px;
 }
-
 .m-menu-button {
     padding: 5px;
     background-color: #ffffff;
@@ -159,11 +143,9 @@ body {
     cursor: pointer;
     transform: scale(2);
 }
-
 .m-menu-button:focus {
     outline:none;
 }
-
 .menu-line {
     display: block;
     height: 2px;
@@ -172,33 +154,27 @@ body {
     margin: 3px 0;
     border-radius: 40px;
 }
-
 .container {
     max-width: 1130px;
     margin: auto;
 }
-
 .film {
-    padding: 80px 0;
+    padding: calc(80px + var(--header-height)) 0 80px;
     border-bottom: 1px solid #D4D4D4;
 }
-
 .film-wrapper {
     display: flex;
 }
-
 .film-trailer {
     display: flex;
     flex-direction: column;
     margin-right: 60px;
 }
-
 .poster {
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     width: 358px;
 }
-
 .trailer-button {
     display: flex;
     align-items: center;
@@ -214,22 +190,18 @@ body {
     filter: brightness(100%);
     transition: filter .2s;
 }
-
 .trailer-button:hover,
 .trailer-button:focus {
     filter: brightness(97%);
 }
-
 .trailer-button-icon {
     margin-right: 14px;
 }
-
 .trailer-button-text {
     font-size: 16px;
     line-height: 19px;
     color: #5671F6;
 }
-
 .film-title {
     font-style: normal;
     font-weight: 900;
@@ -238,7 +210,6 @@ body {
     margin-top: 0;
     margin-bottom: 16px;
 }
-
 .film-subtitle {
     display: block;
     margin-bottom: 32px;
@@ -246,7 +217,6 @@ body {
     line-height: 21px;
     color: #A5A5A5;
 }
-
 .film-description {
     font-size: 14px;
     line-height: 150%;
@@ -255,43 +225,35 @@ body {
     margin-bottom: 34px;
     margin-top: 0;
 }
-
 .about-film {
     display: flex;
     margin-bottom: 50px;
 }
-
 .about-text {
     display: block;
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 16px;
 }
-
 .no-margin-bottom {
     margin-bottom: 0;
 }
-
 .no-margin-right {
     margin-right: 0;
 }
-
 .about-text-bold {
     display: inline-block;
     width: 100px;
     vertical-align: top;
     font-weight: bold;
 }
-
 .left-side {
     margin-right: 40px;
 }
-
 .rating {
     display: flex;
     align-items: center;
 }
-
 .rating-counter {
     width: 100px;
     height: 100px;
@@ -306,7 +268,6 @@ body {
     line-height: 33px;
     color: #5671F6;
 }
-
 .rating-title {
     font-weight: bold;
     font-size: 18px;
@@ -314,29 +275,24 @@ body {
     margin-top: 0;
     margin-bottom: 12px;
 }
-
 .rating-text {
     display: block;
     margin-bottom: 7px;
     font-size: 16px;
     line-height: 19px;
 }
-
 .rating-text-bold {
     font-weight: bold;
 }
-
 .cast {
     padding-top: 70px;
     padding-bottom: 65px;
 }
-
 .tabs {
     display: flex;
     align-items: center;
     margin-bottom: 60px;
 }
-
 .section-title {
     position: relative;
     font-weight: normal;
@@ -348,32 +304,27 @@ body {
     border: none;
     cursor: pointer;
 }
-
 .section-title.active {
     font-weight: 900;
     color: #363636;
     cursor: auto;
 }
-
 .tabs-content {
     display: none;
     align-items: center;
     flex-wrap: wrap;
     visibility: hidden;
 }
-
 .tabs-content.visible {
     display: flex;
     visibility: visible;
 }
-
 .card {
     display: flex;
     align-items: center;
     flex-basis: 25%;
     margin-bottom: 35px;
 }
-
 .card-image {
     width: 100px;
     height: 100px;
@@ -381,29 +332,24 @@ body {
     border-radius: 50%;
     margin-right: 20px;
 }
-
 .card-text {
     font-size: 16px;
     line-height: 19px;
 }
-
 .name {
     font-weight: bold;
     color: #5671F6;
     margin-top: 0;
     margin-bottom: 6px;
 }
-
 .en-name {
     color: #A5A5A5;
 }
-
 .news {
     background-color: #F3F3F3;
     padding-top: 70px;
     padding-bottom: 100px;
 }
-
 .section-news-title {
     font-weight: 900;
     font-size: 24px;
@@ -411,26 +357,22 @@ body {
     color: #000000;
     margin: 0 0 65px;
 }
-
 .news-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-
 .news-card {
     flex-basis: 23%;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 5px;
 }
-
 .news-card-date {
     font-size: 14px;
     line-height: 16px;
     color: #000000;
 }
-
 .news-card-title {
     font-weight: 900;
     font-size: 14px;
@@ -438,7 +380,6 @@ body {
     color: #000000;
     margin-top: 14px;
 }
-
 .button-next {
     display: none;
     background-color: transparent;
@@ -450,92 +391,84 @@ body {
     cursor: pointer;
     z-index: 10;
 }
-
 .button-next:focus {
     outline:none;
 }
-
 @media (max-width: 1200px) {
+    :root {
+        --header-height: 95px;
+    }
     .container {
         max-width: 960px;
     }
-
     .header {
-        height: 95px;
+        height: var(--header-height);
     }
-
     .logo {
         margin: 0 20px;
     }
-
     .search-input {
         margin-left: 20px;
     }
-
     .navigation {
         margin-right: 10px;
     }
-
     .navigation-link {
         margin-right: 10px;
     }
-
     .sign-up {
         padding-left: 10px;
         padding-right: 10px;
     }
-
+    .film {
+        padding-top: calc(80px + var(--header-height));
+    }
     .card-image {
         width: 70px;
         height: 70px;
     }
 }
-
 @media (max-width: 991px) {
+    :root {
+        --header-height: 80px;
+    }
     .container {
         max-width: 760px;
     }
-
     .header {
-        height: 80px;
+        height: var(--header-height);
     }
-
     .search-input {
         margin-right: auto;
     }
-
     .navigation {
         display: none;
     }
-
+    .film {
+        padding-top: calc(80px + var(--header-height));
+    }
     .film-title {
         font-size: 24px;
         line-height: 1.4;
     }
-
     .film-subtitle {
         margin-bottom: 20px;
     }
-
     .film-description,
     .about-film {
         margin-bottom: 30px;
     }
-
     .about-text-bold {
         display: block;
         margin-bottom: 5px;
     }
-
     .card {
         flex-basis: 50%;
     }
-
     .card-image {
         width: 100px;
         height: 100px;
     }
-
     .news-card {
         flex-basis: 48%;
         margin-bottom: 20px;
@@ -546,11 +479,9 @@ body {
     .container {
         max-width: 560px;
     }
-
     .line {
         display: none;
     }
-
     .search-input {
         margin: 0;
         width: 260px;
@@ -558,7 +489,6 @@ body {
         border-radius: 5px;
         background-image: none;
     }
-
     .m-menu {
         display: none;
         flex-direction: column;
@@ -573,11 +503,9 @@ body {
         background-color: #5671F6;
         z-index: 10;
     }
-
     .m-menu.active {
         display: flex;
     }
-
     .navigation {
         display: flex;
         flex-direction: column;
@@ -585,31 +513,32 @@ body {
         align-items: center;
         margin: 0;
     }
-
     .navigation-link {
         padding: 0;
         color: #FFFFFF;
         margin-bottom: 18px;
         margin-right: 0;
     }
-
     .navigation-link:last-child {
         margin-bottom: 0;
     }
-
     .navigation-link::after {
         bottom: 0;
         background-color: #FFFFFF;
     }
-
     .m-line {
         display: block;
     }
-
     .button-group {
         height: auto;
         flex-direction: column;
         border-left: none;
+    }
+
+    .sign-in,
+    .sign-up {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .sign-up {
@@ -618,22 +547,20 @@ body {
         margin-bottom: 30px;
         padding: 0;
     }
-
     .sign-in {
         padding: 0;
     }
-
     .sign-up:hover,
     .sign-up:focus,
     .sign-in:hover,
     .sign-in:focus {
         filter: none;
     }
-
     .sign-up::after,
     .sign-in::after {
         content: "";
         height: 1px;
+        width: 100%;
         left: 0;
         bottom: 0;
         position: absolute;
@@ -641,16 +568,6 @@ body {
         transform: scaleX(0);
         transition: transform 0.3s;
     }
-
-    .sign-up::after {
-        width: 100%;
-    }
-
-    .sign-in::after {
-        width: 35%;
-        transform: translateX(95%) scaleX(0);
-    }
-
     .sign-up:hover::after,
     .sign-up:focus::after,
     .sign-in:hover::after,
@@ -658,137 +575,105 @@ body {
         filter: none;
         transform: scaleX(1);
     }
-
-    .sign-in:hover::after,
-    .sign-in:focus::after {
-        transform: translateX(95%)
-    }
-
     .m-buttons {
         display: block;
         margin-left: auto;
     }
-
     .film {
-        padding-top: 50px;
+        padding-top: calc(50px + var(--header-height));
         padding-bottom: 60px;
     }
-
     .film-wrapper {
         flex-wrap: wrap;
     }
-
     .film-text {
         order: -1;
         margin-bottom: 30px;
     }
-
     .cast,
     .news {
         padding-top: 50px;
         padding-bottom: 35px;
     }
-
     .section-news-title {
         margin-bottom: 40px;
     }
-
     .news-card {
         width: 90%;
     }
-
     .button-next {
         display: block;
     }
 }
-
 @media (max-width: 570px) {
     .container {
         width: 95%;
     }
-
     .header {
         padding: 0 2.5%;
     }
-
     .film {
-        padding: 30px 0 70px;
+        padding: calc(30px + var(--header-height)) 0 70px;
     }
-
     .film-title {
         font-size: 20px;
         line-height: 23px;
         margin-bottom: 12px;
     }
-
     .film-subtitle {
         font-size: 14px;
         line-height: 16px;
         margin-bottom: 26px;
     }
-
     .film-description {
         font-size: 14px;
         line-height: 150%;
         margin-bottom: 40px;
     }
-
     .film-trailer {
         width: 100%;
         margin: 0 0 30px;
     }
-
     .poster {
         width: 100%;
     }
-
     .film-text {
         order: 0;
         margin-bottom: 0;
     }
-
     .about-film {
         flex-wrap: wrap;
         flex-direction: column;
         margin-bottom: 14px;
     }
-
     .about-text-bold {
         display: inline-block;
     }
-
     .cast {
         padding-top: 74px;
         padding-bottom: 35px;
     }
-
     .tabs {
         margin-bottom: 45px;
     }
-
     .section-title {
         font-size: 18px;
         line-height: 21px;
     }
-
     .card {
         flex-basis: 100%;
         margin-bottom: 20px;
     }
-
     .card-image {
         height: 60px;
         width: 60px;
     }
-
     .news {
         padding-bottom: 60px;
     }
-
     .section-news-title {
         margin-bottom: 40px;
     }
-
     .news-card {
         flex-basis: 80%;
     }
