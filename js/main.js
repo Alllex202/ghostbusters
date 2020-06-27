@@ -5,7 +5,7 @@ $(document).ready(function () {
     mMenuBtn.on('click', function () {
         mMenu.toggleClass('active');
         $('body').toggleClass('no-scroll');
-        alett($(this));
+        alert($(this));
         if (!$(this)[1].classList.contains('m-menu-button-open')) {
             $(this).addClass('m-menu-button-open');
         }
