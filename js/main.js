@@ -6,7 +6,7 @@ $(document).ready(function () {
         mMenu.toggleClass('active');
         $('body').toggleClass('no-scroll');
         alett($(this));
-        if (!$(this).classList.contains('m-menu-button-open')) {
+        if (!$(this)[1].classList.contains('m-menu-button-open')) {
             $(this).addClass('m-menu-button-open');
         }
     });
