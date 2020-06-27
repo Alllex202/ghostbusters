@@ -5,6 +5,7 @@ $(document).ready(function () {
     mMenuBtn.on('click', function () {
         mMenu.toggleClass('active');
         $('body').toggleClass('no-scroll');
+        $(this).toggleClass('active');
     });
 
     tab.on('click', function () {
