@@ -3,11 +3,37 @@ $(document).ready(function () {
     const mMenu = $('.m-menu');
     const tab = $('.tab');
     mMenuBtn.on('click', function () {
-        mMenu.toggleClass('active');
-        $('body').toggleClass('no-scroll');
-        alert($(this));
-        if (!$(this)[1].classList.contains('m-menu-button-open')) {
-            $(this).addClass('m-menu-button-open');
+        // mMenu.toggleClass('active');
+        // $('body').toggleClass('no-scroll');
+        // console.log($(this));
+        // mMenuBtn.toggleClass('m-menu-button-open');
+        // if (mMenu.classList.contains('active')) {
+        //         setTimeout(function () {
+        //         $('.film').toggleClass('d-none');
+        //         $('.cast').toggleClass('d-none');
+        //         $('.news').toggleClass('d-none');
+        //     }, 500);
+        // }
+        if (mMenu[0].classList.contains('active')) {
+            $('.film').toggleClass('d-none');
+            $('.cast').toggleClass('d-none');
+            $('.news').toggleClass('d-none');
+            mMenu.toggleClass('close');
+            setTimeout(function () {
+                mMenu.toggleClass('close');
+                mMenu.toggleClass('active');
+            }, 300);
+            mMenuBtn.toggleClass('m-menu-button-open');
+            $('body, html').toggleClass('no-scroll');
+        } else {
+            $('body, html').toggleClass('no-scroll');
+            mMenu.toggleClass('active');
+            mMenuBtn.toggleClass('m-menu-button-open');
+            setTimeout(function () {
+                $('.film').toggleClass('d-none');
+                $('.cast').toggleClass('d-none');
+                $('.news').toggleClass('d-none');
+            }, 300);
         }
     });
 

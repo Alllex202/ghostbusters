@@ -11,6 +11,9 @@ body {
 .no-scroll {
     overflow: hidden;
 }
+.d-none {
+    display: none;
+}
 .header {
     display: flex;
     align-items: center;
@@ -142,34 +145,20 @@ body {
     border: none;
     cursor: pointer;
     transform: scale(2);
-    transition: .5s transform;
 }
 .m-menu-button:focus {
     outline:none;
 }
-.m-menu-button:active .menu-line[data-number="1"]{
-    transition: transform .5s;
-    transform: rotate(-45deg) scale (0.6) translate(0, 0);
-}
-.m-menu-button:active .menu-line[data-number="2"]{
-    transition: transform .5s;
-    transform: rotate(90deg) translate(0, 0);
-}
-.m-menu-button:active .menu-line[data-number="3"]{
-    transition: transform .5s;
-    transform: rotate(45deg) scale (0.6) translate(0, 0);
-}
 .m-menu-button-open .menu-line[data-number="1"]{
-    transition: transform .5s;
-    transform: rotate(-45deg) scale (0.6) translate(0, 0);
+    transform-origin: left center;
+    transform: translateX(8px) scaleX(0.4) rotate(25deg);
 }
 .m-menu-button-open .menu-line[data-number="2"]{
-    transition: transform .5s;
-    transform: rotate(90deg) translate(0, 0);
+    transform: rotate(90deg) scaleX(0.8) translateX(1px);
 }
 .m-menu-button-open .menu-line[data-number="3"]{
-    transition: transform .5s;
-    transform: rotate(45deg) scale (0.6) translate(0, 0);
+    transform-origin: left center;
+    transform: translateX(8px) translateY(-10px) scaleX(0.4) rotate(155deg);
 }
 .menu-line {
     display: block;
@@ -178,6 +167,18 @@ body {
     background-color: #000000;
     margin: 3px 0;
     border-radius: 40px;
+    transition: transform .3s;
+}
+.menu-line[data-number="1"]{
+    transform-origin: left center;
+    transform: translateX(0) scaleX(1) rotate(0);
+}
+.menu-line[data-number="2"]{
+    transform: rotate(0) scaleX(1) translateX(0);
+}
+.menu-line[data-number="3"]{
+    transform-origin: left center;
+    transform: translateX(0) translateY(0) scaleX(1) rotate(0);
 }
 .container {
     max-width: 1130px;
@@ -529,7 +530,27 @@ body {
         z-index: 10;
     }
     .m-menu.active {
+        animation: .3s animation-open;
         display: flex;
+    }
+    .m-menu.close {
+        animation: .3s animation-close;
+    }
+    @keyframes animation-open {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes animation-close {
+        from {
+            opacity: 1;
+        }
+        to {
+            opacity: 0;
+        }
     }
     .navigation {
         display: flex;
