@@ -3,6 +3,7 @@ $(document).ready(function () {
     const mMenu = $('.m-menu');
     const tab = $('.tab');
     const body = $('body, html');
+    const film = $('.film')
     let scroll;
     mMenuBtn.on('click', function () {
         // mMenu.toggleClass('active');
@@ -16,8 +17,8 @@ $(document).ready(function () {
         //         $('.news').toggleClass('d-none');
         //     }, 500);
         // }
-        if (mMenu[0].classList.contains('active')) {
-            $('.film').toggleClass('d-none');
+        if (mMenu[0].classList.contains('active') && film[0].classList.contains('d-none')) {
+            film.toggleClass('d-none');
             $('.cast').toggleClass('d-none');
             $('.news').toggleClass('d-none');
             mMenu.toggleClass('close');
@@ -28,13 +29,15 @@ $(document).ready(function () {
             mMenuBtn.toggleClass('m-menu-button-open');
             body.scrollTop(scroll);
             body.toggleClass('no-scroll');
-        } else {
+        } else if (!mMenu[0].classList.contains('active')) {
+            console.log("-",scroll)
             scroll = body.scrollTop();
+            console.log(scroll);
             body.toggleClass('no-scroll');
             mMenu.toggleClass('active');
             mMenuBtn.toggleClass('m-menu-button-open');
             setTimeout(function () {
-                $('.film').toggleClass('d-none');
+                film.toggleClass('d-none');
                 $('.cast').toggleClass('d-none');
                 $('.news').toggleClass('d-none');
             }, 300);
